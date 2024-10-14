@@ -1,0 +1,21 @@
+image:
+  file: .gitpod.Dockerfile  # Optional - if you need a custom Dockerfile
+
+tasks:
+  - init: |
+      # Commands to run when the workspace starts (e.g., installing dependencies)
+      sudo apt-get update
+      sudo apt-get install -y curl unzip # Example of installing system packages
+      curl -o- https://sdk.dfinity.org/install.sh | bash  # Installing DFX
+      npm install # Install project dependencies
+
+  - command: npm run start  # Command to run your project (adjust to your needs)
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
+    - dbaeumer.vscode-eslint
+
+ports:
+  - port: 8000  # Specify the ports your app runs on
+    onOpen: open-browser
