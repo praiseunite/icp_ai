@@ -1,0 +1,14 @@
+{
+ "name": "DFX Codespace",
+  "dockerFile": "Dockerfile",
+  "forwardPorts": [8000],
+  "postCreateCommand": "dfx --version",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "rust-lang.rust-analyzer",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}
