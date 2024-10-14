@@ -7,9 +7,16 @@ tasks:
       sudo apt-get update
       sudo apt-get install -y curl unzip # Example of installing system packages
       curl -o- https://sdk.dfinity.org/install.sh | bash  # Installing DFX
+      echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc  # Ensure DFX is available in the terminal
+      dfx --version  # Verify installation
       npm install # Install project dependencies
 
   - command: npm run start  # Command to run your project (adjust to your needs)
+
+   - name: Start DFX
+    command: dfx start --background  # Run DFX in the background
+    command: dfx deploy --playground  # Run DFX in the background
+    
 
 vscode:
   extensions:
